@@ -6,8 +6,8 @@
   const content  = document.getElementById('heroContent');
   const label    = document.getElementById('mediaLabel');
   const labelTxt = document.getElementById('mediaLabelText');
-  const SLIDE_TIME = 4000;
-  const FADE_DUR   = 900;
+  const SLIDE_TIME = 5000;
+  const FADE_DUR   = 2500;
   const VIDEO_DUR  = 7000;
   let current = 0, sliderTimer = null, videoTimer = null, videoPhase = false;
 

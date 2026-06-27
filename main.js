@@ -45,4 +45,30 @@
       }
     });
   }, { passive: true });
+
+  /* Photography gallery carousel autoplay + hover interaction */
+  document.addEventListener('DOMContentLoaded', function() {
+    var galleryEl = document.getElementById('galleryCarousel');
+    if (!galleryEl || typeof bootstrap === 'undefined') return;
+    var gallery = new bootstrap.Carousel(galleryEl, {
+      interval: 4500,
+      ride: 'carousel',
+      pause: 'hover',
+      touch: true,
+      wrap: true
+    });
+
+    galleryEl.addEventListener('mouseenter', function() {
+      gallery.pause();
+    });
+    galleryEl.addEventListener('mouseleave', function() {
+      gallery.cycle();
+    });
+    galleryEl.addEventListener('focusin', function() {
+      gallery.pause();
+    });
+    galleryEl.addEventListener('focusout', function() {
+      gallery.cycle();
+    });
+  });
 })();

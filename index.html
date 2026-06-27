@@ -71,7 +71,7 @@
 
   <!-- Image 1: Replace src with your own mobile photography -->
   <div class="hero-layer img1" role="img" aria-label="Hero photo 1"
-    style="background-image:url('assets/hero1.jpg');filter:grayscale(10%) contrast(1.1)">
+    style="background-image:url('assets/street1.jpg');filter:grayscale(10%) contrast(1.1)">
   </div>
 
   <!-- Image 2: Replace src with your own photography -->
@@ -86,7 +86,7 @@
 
   <!-- Video showreel: swap src with your own showreel MP4 -->
   <video id="heroVideo" class="hero-video-layer" muted playsinline preload="auto" aria-hidden="true">
-    <source src="assets/day-in-the-life-1.mp4" type="video/mp4"/>
+    <source src="assets/day-in-the-life-2.mp4" type="video/mp4"/>
   </video>
 
   <div class="hero-overlay" aria-hidden="true"></div>
@@ -178,23 +178,24 @@
           <div class="timeline-role">Financial Advisor</div>
           <div class="timeline-place">Old Mutual</div>
         </div>
-        <div class="timeline-item reveal reveal-d2" role="listitem">
+        <div class="timeline-item reveal reveal-d3" role="listitem">
           <div class="timeline-year">2023</div>
           <div class="timeline-role">Conclude Consultant</div>
           <div class="timeline-place">Standard Bank</div>
+      </div>
 
-               <div class="timeline-item reveal reveal-d2" role="listitem">
-          <div class="timeline-year">2024</div>
-          <div class="timeline-role">Conclude Consultant</div>
-          <div class="timeline-place">FNB</div>  
+        <div class="timeline-item reveal reveal-d4" role="listitem">
+          <div class="timeline-year">2024 – 2025</div>
+          <div class="timeline-role">KYC Consultant</div>
+          <div class="timeline-place">FNB · Johannesburg</div>
         </div>
 
-        <div class="timeline-item reveal reveal-d3" role="listitem">
+        <div class="timeline-item reveal reveal-d4" role="listitem">
           <div class="timeline-year">2026</div>
-          <div class="timeline-role">Started Full-Stack Development</div>
+          <div class="timeline-role">Started Full-Stack Web Development Trainee</div>
           <div class="timeline-place">iHub</div>
         </div>
-        <div class="timeline-item current reveal reveal-d4" role="listitem">
+        <div class="timeline-item current reveal reveal-d1" role="listitem">
           <div class="timeline-year">Now</div>
           <div class="timeline-role">Building &amp; Looking for Opportunities</div>
           <div class="timeline-place">Open to junior roles &amp; freelance</div>
@@ -273,11 +274,11 @@
      SKILLS
 ════════════════════════════════ -->
 <section class="section section-alt" id="skills" aria-labelledby="skills-heading">
-  <div class="reveal">
-    <span class="section-label">Proficiency</span>
-    <h2 class="section-title" id="skills-heading">Skills</h2>
-    <p class="section-sub">Where I'm strong — and where I'm growing fast.</p>
-  </div>
+    <div class="reveal">
+        <span class="section-label">Proficiency</span>
+        <h2 class="section-title" id="skills-heading">Skills</h2>
+        <p class="section-sub">Where I'm strong — and where I'm growing fast.</p>
+    </div>
   <div class="skills-grid">
     <div class="reveal reveal-d1">
       <p class="skill-col-label" style="color:var(--blue)">Development</p>
@@ -287,6 +288,7 @@
       <div class="skill-item" data-pct="70"><div class="skill-header"><span class="skill-name">Bootstrap 5</span><span class="skill-pct">70%</span></div><div class="skill-track"><div class="skill-fill fill-blue"></div></div></div>
       <div class="skill-item" data-pct="60"><div class="skill-header"><span class="skill-name">Node.js / Backend</span><span class="skill-pct">60%</span></div><div class="skill-track"><div class="skill-fill fill-blue"></div></div></div>
     </div>
+
     <div class="reveal reveal-d2">
       <p class="skill-col-label" style="color:var(--amber)">Professional &amp; Creative</p>
       <div class="skill-item" data-pct="92"><div class="skill-header"><span class="skill-name">Customer Service</span><span class="skill-pct">92%</span></div><div class="skill-track"><div class="skill-fill fill-amber"></div></div></div>
@@ -322,36 +324,35 @@
       <div class="carousel-item active">
         <div class="project-slide">
           <div class="project-slide-image">
-            <img src="assets/hero1.jpg" alt="Bootstrap 5 portfolio preview"/>
+            <img src="assets/bootstrap-1.png" alt="Bootstrap 5 portfolio preview"/>
           </div>
-          <div class="project-slide-thumb">🎓</div>
           <div class="project-slide-body">
             <span class="project-tag">Bootstrap · iHub Assignment</span>
             <h3 class="project-title">Bootstrap 5 Portfolio</h3>
             <p class="project-desc">Responsive multi-section portfolio built as a graded iHub/Zaio assignment with daily commits and Netlify deployment.</p>
             <p class="project-meta">Challenge: Making a Bootstrap site feel custom and non-generic. Lesson: CSS variables and utility overrides are powerful.</p>
             <div class="project-links">
-              <a href="#" class="project-link">GitHub →</a>
-              <a href="#" class="project-link">Live Demo →</a>
+              <a href="https://github.com/hlatsiboy113-png/portfolio-project-v5" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
+              <a href="https://hlatsiboy113-png.github.io/portfolio-project-v5/" target="_blank" rel="noopener noreferrer" class="project-link">Live Demo →</a>
             </div>
           </div>
         </div>
       </div>
-
+      <-- iiMAGE Carousel -->
       <div class="carousel-item">
         <div class="project-slide">
           <div class="project-slide-image">
-            <img src="assets/gallery.jpg" alt="YouTube clone preview"/>
+            <img src="assets/image-carousel.png" alt="JS Image Carousel"/>
           </div>
-          <div class="project-slide-thumb">📺</div>
+          
           <div class="project-slide-body">
-            <span class="project-tag">Vanilla JS · UI Clone</span>
-            <h3 class="project-title">YouTube Clone</h3>
-            <p class="project-desc">UI clone with live search filtering, hover video preview, and dark/light mode toggle — built from scratch with vanilla JS.</p>
-            <p class="project-meta">Challenge: Hover video preview without a backend. Lesson: The DOM can do more than you think.</p>
+            <span class="project-tag">JS Component: Carousel</span>
+            <h3 class="project-title">JavaScript Image-Carousel</h3>
+            <p class="project-desc">A responsive portfolio showcasing my software development, creative work, and professional experience. Built with accessibility, performance, and modern UI principles in mind.</p>
+            <p class="project-meta">Challenge: Create a portfolio that balances technical professionalism with creativity.</p>
             <div class="project-links">
-              <a href="#" class="project-link">GitHub →</a>
-              <a href="#" class="project-link">Live Demo →</a>
+              <a href="https://github.com/hlatsiboy113-png/portfolio-project-v5" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
+              <a href="https://hlatsiboy113-png.github.io/portfolio-project-v5/" target="_blank" rel="noopener noreferrer" class="project-link">Live Demo →</a>
             </div>
           </div>
         </div>
@@ -360,87 +361,85 @@
       <div class="carousel-item">
         <div class="project-slide">
           <div class="project-slide-image">
-            <img src="assets/citynight-lights.jpg" alt="Tesla UI concept preview"/>
+            <img src="assets/tesla.png" alt="Tesla UI concept preview"/>
           </div>
-          <div class="project-slide-thumb">🚗</div>
           <div class="project-slide-body">
             <span class="project-tag">Tesla · UI Concept</span>
             <h3 class="project-title">Tesla Experience</h3>
             <p class="project-desc">Responsive Tesla-inspired model showcase and dashboard concept built with polished components and motion.</p>
             <p class="project-meta">Challenge: Making an energy brand feel premium in code. Lesson: visuals need breathing room.</p>
             <div class="project-links">
-              <a href="#" class="project-link">GitHub →</a>
-              <a href="#" class="project-link">Live Demo →</a>
+              <a href="https://github.com/hlatsiboy113-png/final-tesla" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
+              <a href="https://finalsesla.netlify.app/" target="_blank" rel="noopener noreferrer" class="project-link">Live Demo →</a>
             </div>
           </div>
         </div>
       </div>
-
+        <!-- IMAGE SECTION -->
       <div class="carousel-item">
         <div class="project-slide">
-          <div class="project-slide-image construction">
-            <img src="assets/dawn.jpg" alt="Twitter project under construction"/>
-          </div>
-          <div class="project-slide-thumb">🐦</div>
-          <div class="project-slide-body">
+            <div class="project-slide-image construction">
+            <img src="assets/pngtree-flat-under-construction.png" alt="Twitter project under construction"/>
+        </div>
+        <!-- PROJECT DESCRIPTION SECTION -->
+        <div class="project-slide-body">
             <span class="project-tag">CSS · In Progress</span>
             <h3 class="project-title">Twitter Timeline Clone</h3>
             <p class="project-desc">Work in progress: modern Twitter-style feed rebuild with responsive cards and cleaner interactions.</p>
             <p class="project-meta">Currently under construction. Coming soon with a refreshed visual structure and micro-animations.</p>
             <div class="project-links">
-              <a href="#" class="project-link">GitHub →</a>
-              <a href="#" class="project-link">Live Demo →</a>
+              <a href="https://github.com/twitter-gustavo" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
+              <a href="https://hlatsiboy113-png.github.io/portfolio-project-v5/" target="_blank" rel="noopener noreferrer" class="project-link">Live Demo not available →</a>
             </div>
           </div>
         </div>
       </div>
 
+        <!-- IMAGE SECTION -->
       <div class="carousel-item">
         <div class="project-slide">
-          <div class="project-slide-thumb">🧩</div>
-          <div class="project-slide-body">
+          <div class="project-slide-image">
+            <img src="assets/street1.jpg" alt="AI Assisted Creative Services">
+            <!-- PROJECT DESCRIPTION SECTION -->
             <span class="project-tag">Group Project · iHub</span>
             <h3 class="project-title">iHub Prototype 75</h3>
             <p class="project-desc">Multi-page form system with validation, progress bars, Skill Match Score heuristic, and character counters across a group GitHub project.</p>
             <p class="project-meta">Challenge: Coordinating git across a team. Lesson: Branch strategy and communication matter as much as code.</p>
             <div class="project-links">
               <a href="#" class="project-link">GitHub →</a>
+              <a href="https://github.com/twitter-gustavo" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
+              <a href="https://hlatsiboy113-png.github.io/portfolio-project-v5/" target="_blank" rel="noopener noreferrer" class="project-link">Live Demo not available →</a>
             </div>
           </div>
         </div>
       </div>
-
+      
       <div class="carousel-item">
-  <div class="project-slide">
-
-    <!-- IMAGE SECTION -->
-    <div class="project-slide-image">
-      <img src="assets/5-years.png" alt="AI Assisted Creative Services">
+        <div class="project-slide">
+            <!-- IMAGE SECTION -->
+            <div class="project-slide-image">
+                <img src="assets/5-years.png" alt="AI Assisted Creative Services">
+            </div>
+            <!-- PROJECT DESCRIPTION SECTION -->
+            <div class="project-slide-body">
+                <span class="project-tag">Fiverr · Creative</span>
+                <h3 class="project-title">AI-Assisted Creative Services</h3>
+                <p class="project-desc">Visual and written content services combining AI tools with human creative direction for the SA market.</p>
+                <p class="project-meta">Challenge: Positioning AI output as premium work. Lesson: Curation and taste are skills too.
+                </p>
+        <div class="project-links">
+            <a href="#" class="project-link">Fiverr →</a>
+            <a href="https://github.com/twitter-gustavo" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
+            <a href="https://hlatsiboy113-png.github.io/portfolio-project-v5/" target="_blank" rel="noopener noreferrer" class="project-link">Live Demo not available →</a>
+        </div>
     </div>
-
-    <div class="project-slide-thumb">🎵</div>
-
-    <div class="project-slide-body">
-      <span class="project-tag">Fiverr · Creative</span>
-      <h3 class="project-title">AI-Assisted Creative Services</h3>
-      <p class="project-desc">
-        Visual and written content services combining AI tools with human creative direction for the SA market.
-      </p>
-      <p class="project-meta">
-        Challenge: Positioning AI output as premium work. Lesson: Curation and taste are skills too.
-      </p>
-
-      <div class="project-links">
-        <a href="#" class="project-link">Fiverr →</a>
-      </div>
-    </div>
-
-  </div>
 </div>
+
+    </div>
+    </div>
 
       <div class="carousel-item">
         <div class="project-slide">
-          <div class="project-slide-thumb">📅</div>
           <div class="project-slide-body">
             <span class="project-tag">Tooling · Google Sheets</span>
             <h3 class="project-title">Academic Planning System</h3>
@@ -448,7 +447,11 @@
             <p class="project-meta">Challenge: Making a spreadsheet feel like a product. Lesson: Data systems can be elegant.</p>
             <div class="project-links">
               <a href="#" class="project-link">View →</a>
+              <a href="https://github.com/twitter-gustavo" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
+              <a href="https://hlatsiboy113-png.github.io/portfolio-project-v5/" target="_blank" rel="noopener noreferrer" class="project-link">Live Demo not available →</a>
             </div>
+            
+        </div>
           </div>
         </div>
       </div>
@@ -474,11 +477,13 @@
     <p class="section-sub">Three albums. Three perspectives. Shot on a Samsung A32 5G.</p>
   </div>
 
-  <div id="galleryCarousel" class="carousel slide reveal" data-bs-ride="carousel" data-bs-interval="5000" aria-label="Photography gallery">
+  <div id="galleryCarousel" class="carousel slide reveal" data-bs-ride="carousel" data-bs-interval="4500" data-bs-touch="true" data-bs-pause="hover" data-bs-wrap="true" aria-label="Photography gallery" aria-roledescription="carousel">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Album 1"></button>
       <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1" aria-label="Album 2"></button>
       <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2" aria-label="Album 3"></button>
+      <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="3" aria-label="Album 4"></button>
+      <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="4" aria-label="Album 5"></button>
     </div>
     <div class="carousel-inner">
 
@@ -506,7 +511,7 @@
 
       <div class="carousel-item">
         <div class="gallery-slide">
-          <!-- Replace with your Day in the Life photography -->
+          <!-- Day in the Life photography -->
           <img src="assets/tefo-the-nkabi.jpg">
           <div class="carousel-caption-custom">
             <h5>A Day in the Life</h5>
@@ -518,11 +523,11 @@
 
       <div class="carousel-item">
         <div class="gallery-slide">
-          <!-- photography -->
+          <!-- Night-Life photography -->
           <img src="assets/citynight-lights.jpg">
           <div class="carousel-caption-custom">
-            <h5>A Day in the Life</h5>
-            <p>The iHub journey, documented.</p>
+            <h5>Night-Life Joburg</h5>
+            <p>Explore</p>
           </div>
         </div>
       </div>
@@ -530,11 +535,11 @@
       
       <div class="carousel-item">
         <div class="gallery-slide">
-          <!-- photography -->
+          <!-- Sharing a friends work -->
           <img src="assets/@sharp_fede-10.jpg">
           <div class="carousel-caption-custom">
-            <h5>A Day in the Life</h5>
-            <p>The iHub journey, documented.</p>
+            <h5>A friends/phographer's work, Bantu</h5>
+            <p>Network=Networth</p>
           </div>
         </div>
       </div>
