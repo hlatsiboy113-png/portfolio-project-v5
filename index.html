@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Mahlatse — Full-Stack Developer, Photographer, and Creative based in Johannesburg."/>
+  <title>Mahlatse | Developer · Designer · Storyteller</title>
+  <!-- Preload hero image 1 -->
+  <link rel="preload" as="image" href="assets/street1.heic"/>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <!-- Portfolio styles -->
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- Skip to content (accessibility) -->
+<a class="skip-link" href="#main-content">Skip to content</a>
+
+<!-- Scroll progress bar -->
+<div id="progressBar" role="progressbar" aria-hidden="true"></div>
+
+<!-- ═══════════════════════════════
+     NAV
+════════════════════════════════ -->
+<header>
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <a href="#home" class="nav-brand">Mahlatse.</a>
+    <ul class="nav-links" role="list">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#creative">Creative</a></li>
+      <li><a href="#techstack">Stack</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#hire">Hire Me</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="btn-theme" onclick="toggleMode()" aria-label="Toggle light/dark mode">
+        <span id="themeIcon">☀️</span> Theme
+      </button>
+      <button class="nav-hamburger" onclick="toggleMobileNav()" aria-label="Open navigation menu" aria-expanded="false" id="hamburgerBtn">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <!-- Mobile drawer -->
+  <div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Mobile navigation">
+    <a href="#home"      onclick="closeMobileNav()">Home</a>
+    <a href="#about"     onclick="closeMobileNav()">About</a>
+    <a href="#creative"  onclick="closeMobileNav()">Creative</a>
+    <a href="#techstack" onclick="closeMobileNav()">Tech Stack</a>
+    <a href="#projects"  onclick="closeMobileNav()">Projects</a>
+    <a href="#gallery"   onclick="closeMobileNav()">Gallery</a>
+    <a href="#hire"      onclick="closeMobileNav()">Hire Me</a>
+    <a href="#contact"   onclick="closeMobileNav()">Contact</a>
+  </div>
+</header>
+
+<main id="main-content">
+
+<!-- ═══════════════════════════════
+     HERO — 3 images → 7s video → loops
+════════════════════════════════ -->
+<section class="hero" id="home" aria-label="Hero section">
+
+  <!-- Image 1: Replace src with your own mobile photography -->
+  <div class="hero-layer img1" role="img" aria-label="Hero photo 1"
+    style="background-image:url('assets/hero1.jpg');filter:grayscale(10%) contrast(1.1)">
+  </div>
+
+  <!-- Image 2: Replace src with your own photography -->
+  <div class="hero-layer img2" role="img" aria-label="Hero photo 2"
+    style="background-image:url('assets/@sharp_fede-10.jpg');filter:hue-rotate(10deg) brightness(.9)">
+  </div>
+
+  <!-- Image 3: Dark tech / creative image -->
+  <div class="hero-layer img3" role="img" aria-label="Hero photo 3"
+    style="background-image:url('assets/dawn.jpg');filter:brightness(.85) saturate(1.1)">
+  </div>
+
+  <!-- Video showreel: swap src with your own showreel MP4 -->
+  <video id="heroVideo" class="hero-video-layer" muted playsinline preload="auto" aria-hidden="true">
+    <source src="assets/day-in-the-life-1.mp4" type="video/mp4"/>
+  </video>
+
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <!-- State label -->
+  <div class="media-label" id="mediaLabel" aria-hidden="true">
+    <span class="media-dot"></span>
+    <span id="mediaLabelText">Loading</span>
+  </div>
+
+  <!-- Hero text -->
+  <div class="hero-content" id="heroContent">
+    <p class="hero-identity">Developer <span>·</span> Designer <span>·</span> Storyteller</p>
+    <h1 class="hero-title">
+      From Soweto<br/>
+      to <span class="a-amber">Software</span><br/>
+      <span class="a-green">—</span>
+    </h1>
+    <p class="hero-sub">
+      Building software that solves problems. Capturing stories through photography.
+      Creating experiences people remember.
+    </p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn-primary">View My Work ↓</a>
+      <a href="#about"    class="btn-outline">Read My Story</a>
+    </div>
+  </div>
+
+  <!-- Dot indicators -->
+  <div class="hero-dots" aria-label="Slide indicators">
+    <button class="hero-dot active" data-idx="0" onclick="goToSlide(0)" aria-label="Slide 1"></button>
+    <button class="hero-dot"        data-idx="1" onclick="goToSlide(1)" aria-label="Slide 2"></button>
+    <button class="hero-dot"        data-idx="2" onclick="goToSlide(2)" aria-label="Slide 3"></button>
+  </div>
+
+  <!-- Progress strip -->
+  <div class="hero-progress" aria-hidden="true">
+    <div class="hero-progress-fill" id="heroProgressFill"></div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════
+     ABOUT ME
+════════════════════════════════ -->
+<section class="section" id="about" aria-labelledby="about-heading">
+  <div class="bio-wrap">
+
+    <!-- Photo column -->
+    <div class="bio-photo-frame reveal">
+      <img src="assets/mahlatse-profile-picture.png" alt="Mahlatse — Developer and photographer" loading="lazy"/>
+      <div class="bio-photo-accent" aria-hidden="true"></div>
+      <span class="bio-photo-tag">Naledi, Soweto, GP</span>
+    </div>
+
+    <!-- Text column -->
+    <div>
+      <span class="section-label">About Me</span>
+      <h2 class="section-title" id="about-heading">The Story Behind the Code</h2>
+
+      <blockquote class="bio-quote">
+        Finance taught me <em>systems</em>.<br/>
+        Photography taught me <em>perspective</em>.<br/>
+        Software development lets me combine both to build <em>meaningful digital experiences</em>.
+      </blockquote>
+
+      <p class="bio-body">
+        Today I develop responsive web applications while exploring the intersection of technology,
+        creativity, and human-centred design. I made a deliberate shift into tech because I wanted
+        to build things that matter — and my background gives me an edge: systems thinking, attention
+        to detail, and the ability to see what others miss through a lens.
+      </p>
+
+      <div class="hero-actions" style="margin-bottom:2.5rem">
+        <a href="#contact" class="btn-primary">Work With Me</a>
+        <a href="assets/mahlatse-cv.pdf" class="btn-outline" download>Download CV</a>
+      </div>
+
+      <!-- Timeline -->
+      <span class="section-label">Journey</span>
+      <div class="timeline" role="list">
+        <div class="timeline-item reveal reveal-d1" role="listitem">
+          <div class="timeline-year">2016 – 2019</div>
+          <div class="timeline-role">Verification Consultant</div>
+          <div class="timeline-place">Standard Bank · Johannesburg</div>
+        </div>
+        <div class="timeline-item reveal reveal-d2" role="listitem">
+          <div class="timeline-year">2022</div>
+          <div class="timeline-role">Financial Advisor</div>
+          <div class="timeline-place">Old Mutual</div>
+        </div>
+        <div class="timeline-item reveal reveal-d2" role="listitem">
+          <div class="timeline-year">2023</div>
+          <div class="timeline-role">Conclude Consultant</div>
+          <div class="timeline-place">Standard Bank</div>
+        </div>
+        <div class="timeline-item reveal reveal-d3" role="listitem">
+          <div class="timeline-year">2024</div>
+          <div class="timeline-role">Started Full-Stack Development</div>
+          <div class="timeline-place">iHub / Zaio Programme</div>
+        </div>
+        <div class="timeline-item current reveal reveal-d4" role="listitem">
+          <div class="timeline-year">Now</div>
+          <div class="timeline-role">Building &amp; Looking for Opportunities</div>
+          <div class="timeline-place">Open to junior roles &amp; freelance</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     CREATIVE IDENTITY
+════════════════════════════════ -->
+<section class="section section-alt" id="creative" aria-labelledby="creative-heading">
+  <div class="reveal">
+    <span class="section-label">Creative Identity</span>
+    <h2 class="section-title" id="creative-heading">Beyond the Code Editor</h2>
+    <p class="section-sub">Three creative disciplines that shape how I think, build, and see the world.</p>
+  </div>
+
+  <div class="creative-grid">
+    <div class="creative-card reveal reveal-d1">
+      <span class="creative-icon" aria-hidden="true">📸</span>
+      <h3 class="creative-title">Photography</h3>
+      <ul class="creative-list" aria-label="Photography disciplines">
+        <li>Street Photography</li>
+        <li>Urban Landscapes</li>
+        <li>Portraits</li>
+      </ul>
+    </div>
+    <div class="creative-card reveal reveal-d2">
+      <span class="creative-icon" aria-hidden="true">🎥</span>
+      <h3 class="creative-title">Video</h3>
+      <ul class="creative-list" aria-label="Video disciplines">
+        <li>Day in the Life</li>
+        <li>iHub Journey</li>
+        <li>Creative Edits</li>
+      </ul>
+    </div>
+    <div class="creative-card reveal reveal-d3">
+      <span class="creative-icon" aria-hidden="true">🎵</span>
+      <h3 class="creative-title">Music</h3>
+      <ul class="creative-list" aria-label="Music disciplines">
+        <li>Hip Hop — SA Vernac</li>
+        <li>FL Studio Production</li>
+        <li>Songwriting</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     TECH STACK
+════════════════════════════════ -->
+<section class="section" id="techstack" aria-labelledby="tech-heading">
+  <div class="reveal">
+    <span class="section-label">What I Work With</span>
+    <h2 class="section-title" id="tech-heading">Tech Stack</h2>
+    <p class="section-sub">The tools I reach for when building — from markup to deployment.</p>
+  </div>
+  <div class="tech-grid">
+    <div class="tech-card reveal reveal-d1"><span class="tech-icon">🌐</span><div class="tech-name">HTML5</div><div class="tech-type">Markup</div></div>
+    <div class="tech-card reveal reveal-d1"><span class="tech-icon">🎨</span><div class="tech-name">CSS3</div><div class="tech-type">Styling</div></div>
+    <div class="tech-card reveal reveal-d2"><span class="tech-icon">⚡</span><div class="tech-name">JavaScript</div><div class="tech-type">Language</div></div>
+    <div class="tech-card reveal reveal-d2"><span class="tech-icon">⚛️</span><div class="tech-name">React</div><div class="tech-type">Framework</div></div>
+    <div class="tech-card reveal reveal-d2"><span class="tech-icon">🅱️</span><div class="tech-name">Bootstrap 5</div><div class="tech-type">UI Library</div></div>
+    <div class="tech-card reveal reveal-d3"><span class="tech-icon">🟢</span><div class="tech-name">Node.js</div><div class="tech-type">Backend</div></div>
+    <div class="tech-card reveal reveal-d3"><span class="tech-icon">🗄️</span><div class="tech-name">SQL</div><div class="tech-type">Database</div></div>
+    <div class="tech-card reveal reveal-d3"><span class="tech-icon">🐙</span><div class="tech-name">Git / GitHub</div><div class="tech-type">Version Control</div></div>
+    <div class="tech-card reveal reveal-d4"><span class="tech-icon">🤖</span><div class="tech-name">AI Tools</div><div class="tech-type">Productivity</div></div>
+    <div class="tech-card reveal reveal-d4"><span class="tech-icon">🎵</span><div class="tech-name">FL Studio</div><div class="tech-type">Creative</div></div>
+    <div class="tech-card reveal reveal-d4"><span class="tech-icon">🎬</span><div class="tech-name">OBS Studio</div><div class="tech-type">Media</div></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     SKILLS
+════════════════════════════════ -->
+<section class="section section-alt" id="skills" aria-labelledby="skills-heading">
+  <div class="reveal">
+    <span class="section-label">Proficiency</span>
+    <h2 class="section-title" id="skills-heading">Skills</h2>
+    <p class="section-sub">Where I'm strong — and where I'm growing fast.</p>
+  </div>
+  <div class="skills-grid">
+    <div class="reveal reveal-d1">
+      <p class="skill-col-label" style="color:var(--blue)">Development</p>
+      <div class="skill-item" data-pct="85"><div class="skill-header"><span class="skill-name">HTML &amp; CSS</span><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-fill fill-blue"></div></div></div>
+      <div class="skill-item" data-pct="72"><div class="skill-header"><span class="skill-name">JavaScript ES6+</span><span class="skill-pct">72%</span></div><div class="skill-track"><div class="skill-fill fill-blue"></div></div></div>
+      <div class="skill-item" data-pct="65"><div class="skill-header"><span class="skill-name">React &amp; Context API</span><span class="skill-pct">65%</span></div><div class="skill-track"><div class="skill-fill fill-blue"></div></div></div>
+      <div class="skill-item" data-pct="70"><div class="skill-header"><span class="skill-name">Bootstrap 5</span><span class="skill-pct">70%</span></div><div class="skill-track"><div class="skill-fill fill-blue"></div></div></div>
+      <div class="skill-item" data-pct="60"><div class="skill-header"><span class="skill-name">Node.js / Backend</span><span class="skill-pct">60%</span></div><div class="skill-track"><div class="skill-fill fill-blue"></div></div></div>
+    </div>
+    <div class="reveal reveal-d2">
+      <p class="skill-col-label" style="color:var(--amber)">Professional &amp; Creative</p>
+      <div class="skill-item" data-pct="92"><div class="skill-header"><span class="skill-name">Customer Service</span><span class="skill-pct">92%</span></div><div class="skill-track"><div class="skill-fill fill-amber"></div></div></div>
+      <div class="skill-item" data-pct="88"><div class="skill-header"><span class="skill-name">Compliance &amp; AML</span><span class="skill-pct">88%</span></div><div class="skill-track"><div class="skill-fill fill-amber"></div></div></div>
+      <div class="skill-item" data-pct="78"><div class="skill-header"><span class="skill-name">Project Management</span><span class="skill-pct">78%</span></div><div class="skill-track"><div class="skill-fill fill-amber"></div></div></div>
+      <div class="skill-item" data-pct="75"><div class="skill-header"><span class="skill-name">Music Production (FL Studio)</span><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill fill-green"></div></div></div>
+      <div class="skill-item" data-pct="70"><div class="skill-header"><span class="skill-name">Photography &amp; Visual</span><span class="skill-pct">70%</span></div><div class="skill-track"><div class="skill-fill fill-green"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     FEATURED PROJECTS — Carousel
+════════════════════════════════ -->
+<section class="section" id="projects" aria-labelledby="projects-heading">
+  <div class="reveal">
+    <span class="section-label">Work</span>
+    <h2 class="section-title" id="projects-heading">Featured Projects</h2>
+    <p class="section-sub">Selected builds — real code, real problems, shipped on deadline.</p>
+  </div>
+
+  <div id="projectsCarousel" class="carousel slide reveal" data-bs-ride="false" aria-label="Projects carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Project 1"></button>
+      <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="1" aria-label="Project 2"></button>
+      <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="2" aria-label="Project 3"></button>
+      <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="3" aria-label="Project 4"></button>
+      <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="4" aria-label="Project 5"></button>
+      <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="5" aria-label="Project 6"></button>
+    </div>
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <div class="project-slide">
+          <div class="project-slide-thumb">🎓</div>
+          <div class="project-slide-body">
+            <span class="project-tag">Bootstrap · iHub Assignment</span>
+            <h3 class="project-title">Bootstrap 5 Portfolio</h3>
+            <p class="project-desc">Responsive multi-section portfolio built as a graded iHub/Zaio assignment with daily commits and Netlify deployment.</p>
+            <p class="project-meta">Challenge: Making a Bootstrap site feel custom and non-generic. Lesson: CSS variables and utility overrides are powerful.</p>
+            <div class="project-links">
+              <a href="#" class="project-link">GitHub →</a>
+              <a href="#" class="project-link">Live Demo →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="project-slide">
+          <div class="project-slide-thumb">📺</div>
+          <div class="project-slide-body">
+            <span class="project-tag">Vanilla JS · UI Clone</span>
+            <h3 class="project-title">YouTube Clone</h3>
+            <p class="project-desc">UI clone with live search filtering, hover video preview, and dark/light mode toggle — built from scratch with vanilla JS.</p>
+            <p class="project-meta">Challenge: Hover video preview without a backend. Lesson: The DOM can do more than you think.</p>
+            <div class="project-links">
+              <a href="#" class="project-link">GitHub →</a>
+              <a href="#" class="project-link">Live Demo →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="project-slide">
+          <div class="project-slide-thumb">🐦</div>
+          <div class="project-slide-body">
+            <span class="project-tag">CSS · Semantic HTML</span>
+            <h3 class="project-title">Twitter Timeline Clone</h3>
+            <p class="project-desc">Pixel-accurate Twitter/X timeline clone focusing on responsive layout, component structure, and semantic markup.</p>
+            <p class="project-meta">Challenge: Matching spacing and layout exactly. Lesson: Devtools + patience beats guessing.</p>
+            <div class="project-links">
+              <a href="#" class="project-link">GitHub →</a>
+              <a href="#" class="project-link">Live Demo →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="project-slide">
+          <div class="project-slide-thumb">🧩</div>
+          <div class="project-slide-body">
+            <span class="project-tag">Group Project · iHub</span>
+            <h3 class="project-title">iHub Prototype 75</h3>
+            <p class="project-desc">Multi-page form system with validation, progress bars, Skill Match Score heuristic, and character counters across a group GitHub project.</p>
+            <p class="project-meta">Challenge: Coordinating git across a team. Lesson: Branch strategy and communication matter as much as code.</p>
+            <div class="project-links">
+              <a href="#" class="project-link">GitHub →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="project-slide">
+          <div class="project-slide-thumb">🎵</div>
+          <div class="project-slide-body">
+            <span class="project-tag">Fiverr · Creative</span>
+            <h3 class="project-title">AI-Assisted Creative Services</h3>
+            <p class="project-desc">Visual and written content services combining AI tools with human creative direction for the SA market.</p>
+            <p class="project-meta">Challenge: Positioning AI output as premium work. Lesson: Curation and taste are skills too.</p>
+            <div class="project-links">
+              <a href="#" class="project-link">Fiverr →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="project-slide">
+          <div class="project-slide-thumb">📅</div>
+          <div class="project-slide-body">
+            <span class="project-tag">Tooling · Google Sheets</span>
+            <h3 class="project-title">Academic Planning System</h3>
+            <p class="project-desc">Google Sheets workbook + .ics calendar covering 84 days of the iHub programme, with named assignments and days-remaining formulas.</p>
+            <p class="project-meta">Challenge: Making a spreadsheet feel like a product. Lesson: Data systems can be elegant.</p>
+            <div class="project-links">
+              <a href="#" class="project-link">View →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel" data-bs-slide="prev" aria-label="Previous project">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel" data-bs-slide="next" aria-label="Next project">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     PHOTOGRAPHY GALLERY — Carousel
+════════════════════════════════ -->
+<section class="section section-dark" id="gallery" aria-labelledby="gallery-heading">
+  <div class="reveal">
+    <span class="section-label">Photography</span>
+    <h2 class="section-title" id="gallery-heading">Portfolio Gallery</h2>
+    <p class="section-sub">Three albums. Three perspectives. Shot on a Samsung A32 5G.</p>
+  </div>
+
+  <div id="galleryCarousel" class="carousel slide reveal" data-bs-ride="carousel" data-bs-interval="5000" aria-label="Photography gallery">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Album 1"></button>
+      <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="1" aria-label="Album 2"></button>
+      <button type="button" data-bs-target="#galleryCarousel" data-bs-slide-to="2" aria-label="Album 3"></button>
+    </div>
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <div class="gallery-slide">
+          <!-- Replace with your actual street photography -->
+          <img src="assets/bantubahle.jpg" alt="Street Photography — urban life captured" loading="lazy"/>
+          <div class="carousel-caption-custom">
+            <h5>The Street Photography</h5>
+            <p>Johannesburg through an honest lens.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="gallery-slide">
+      
+          <img src="assets/" loading="lazy"/>
+          <div class="carousel-caption-custom">
+            <h5>Red Season</h5>
+            <p>Mood, and movement.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <div class="gallery-slide">
+          <!-- Replace with your Day in the Life photography -->
+          <img src="assets/tefo-the-nkabi.jpg">
+          <div class="carousel-caption-custom">
+            <h5>A Day in the Life</h5>
+            <p>The iHub journey, documented.</p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="carousel-item">
+        <div class="gallery-slide">
+          <!-- Replace with your Day in the Life photography -->
+          <img src="assets/citynight-lights.jpg">
+          <div class="carousel-caption-custom">
+            <h5>A Day in the Life</h5>
+            <p>The iHub journey, documented.</p>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="carousel-item">
+        <div class="gallery-slide">
+          <!-- Replace with your Day in the Life photography -->
+          <img src="assets/@sharp_fede-10.jpg">
+          <div class="carousel-caption-custom">
+            <h5>A Day in the Life</h5>
+            <p>The iHub journey, documented.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev" aria-label="Previous photo">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next" aria-label="Next photo">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     HIRE FUNNEL
+════════════════════════════════ -->
+<section class="section section-alt" id="hire" aria-labelledby="hire-heading">
+  <div class="reveal">
+    <span class="section-label">Work With Me</span>
+    <h2 class="section-title" id="hire-heading">Hire Me</h2>
+    <p class="section-sub">Open to junior developer roles, freelance projects, and creative collaborations.</p>
+  </div>
+
+  <div class="funnel-track reveal" role="list" aria-label="Hiring process steps">
+    <div class="funnel-step-wrap" role="listitem">
+      <div class="funnel-card">
+        <div class="funnel-num">01</div>
+        <div class="funnel-title">Discover</div>
+        <p class="funnel-desc">Find out what I do and what I stand for.</p>
+        <a href="#about" class="btn-outline" style="font-size:.7rem;padding:.55rem 1rem">My Story</a>
+      </div>
+    </div>
+    <div class="funnel-arrow" aria-hidden="true">→</div>
+    <div class="funnel-step-wrap" role="listitem">
+      <div class="funnel-card">
+        <div class="funnel-num">02</div>
+        <div class="funnel-title">View Projects</div>
+        <p class="funnel-desc">Real work. Real code. On deadline.</p>
+        <a href="#projects" class="btn-outline" style="font-size:.7rem;padding:.55rem 1rem">Projects</a>
+      </div>
+    </div>
+    <div class="funnel-arrow" aria-hidden="true">→</div>
+    <div class="funnel-step-wrap" role="listitem">
+      <div class="funnel-card">
+        <div class="funnel-num">03</div>
+        <div class="funnel-title">Read My Story</div>
+        <p class="funnel-desc">Finance + creativity + code = uncommon.</p>
+        <a href="#about" class="btn-outline" style="font-size:.7rem;padding:.55rem 1rem">About</a>
+      </div>
+    </div>
+    <div class="funnel-arrow" aria-hidden="true">→</div>
+    <div class="funnel-step-wrap" role="listitem">
+      <div class="funnel-card">
+        <div class="funnel-num">04</div>
+        <div class="funnel-title">Download CV</div>
+        <p class="funnel-desc">Everything in one clean document.</p>
+        <a href="assets/mahlatse-cv.pdf" class="btn-outline" style="font-size:.7rem;padding:.55rem 1rem" download>Get CV</a>
+      </div>
+    </div>
+    <div class="funnel-arrow" aria-hidden="true">→</div>
+    <div class="funnel-step-wrap" role="listitem">
+      <div class="funnel-card">
+        <div class="funnel-num">05</div>
+        <div class="funnel-title">Contact</div>
+        <p class="funnel-desc">Let's talk. I respond within 24 hours.</p>
+        <a href="#contact" class="btn-primary" style="font-size:.7rem;padding:.55rem 1rem">Reach Out</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════
+     CONTACT
+════════════════════════════════ -->
+<section class="section" id="contact" aria-labelledby="contact-heading">
+  <div class="reveal">
+    <span class="section-label">Get In Touch</span>
+    <h2 class="section-title" id="contact-heading">Let's Build Something</h2>
+    <p class="section-sub">Have a project, a role, or just want to connect? Drop me a message.</p>
+  </div>
+
+  <div class="contact-form-wrap reveal reveal-d1">
+
+    <!-- Form fields -->
+    <div id="contactFormFields">
+      <p style="font-family:var(--font-display);font-size:.62rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:1.25rem">Send a Message</p>
+
+      <label class="form-label-custom" for="contactName">Name</label>
+      <input class="form-input" type="text" id="contactName" placeholder="Your name" autocomplete="name" required/>
+
+      <label class="form-label-custom" for="contactEmail">Email</label>
+      <input class="form-input" type="email" id="contactEmail" placeholder="your@email.com" autocomplete="email" required/>
+
+      <label class="form-label-custom" for="contactMsg">Message</label>
+      <textarea class="form-input" id="contactMsg" placeholder="Tell me about your project or opportunity…" required></textarea>
+
+      <button class="btn-primary" type="button" onclick="sendMessage()" style="width:100%;justify-content:center">
+        Send Message →
+      </button>
+    </div>
+
+    <!-- Success state (shown after submit) -->
+    <div class="form-success" id="formSuccess" role="alert" aria-live="polite">
+      <div class="success-icon" aria-hidden="true">✅</div>
+      <div class="success-title">Message received, <span id="successName">friend</span>!</div>
+      <p class="success-sub">I'll get back to you within 24 hours. Talk soon.</p>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- ═══════════════════════════════
+     FOOTER
+════════════════════════════════ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-brand">
+    <strong>Mahlatse.</strong> Built with precision &amp; soul — Johannesburg, 2025
+  </div>
+  <nav class="footer-links" aria-label="Footer links">
+    <a href="https://github.com/hlatsiboy113-png" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile">GitHub</a>
+    <a href="https://www.linkedin.com/in/mahlatse-mokgawa-53b588103/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile">LinkedIn</a>
+    <a href="https://www.fiverr.com/quilpix/buying?source=avatar_menu_profile" target="_blank" rel="noopener noreferrer" aria-label="Fiverr profile">Fiverr</a>
+    <a href="https://www.instagram.com/officialblackop//" target="_blank" rel="noopener noreferrer" aria-label="Instagram — Photography">Instagram</a>
+    <a href="mailto:hlatsiboy113@gmail.com" aria-label="Send email">✉ Email</a>
+    <a href="assets/Mahlatse Resume 2025 (1).pdf" download aria-label="Download CV">↓ CV</a>
+    <a href="#home" aria-label="Back to top">↑ Top</a>
+  </nav>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Portfolio JS — order matters -->
+<script src="js/main.js"></script>
+<script src="js/hero.js"></script>
+<script src="js/animations.js"></script>
+<script src="js/contact.js"></script>
+
+</body>
+</html>
