@@ -9,7 +9,7 @@
 
   const scenes = [
     { label: 'Scene 01 · Origin', duration: 1500 },
-    { label: 'Scene 02 · Soweto', duration: 1500 },
+    { label: 'Scene 02 · Family · Pink chapter', duration: 1500 },
     { label: 'Scene 03 · Personal identity', duration: 1500 },
     { label: 'Scene 04 · FNB · Professional identity', duration: 1800 },
     { label: 'Scene 05 · Creative identity', duration: 1800 },

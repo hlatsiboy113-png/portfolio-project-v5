@@ -106,6 +106,52 @@
     }
   });
 
+  /* Main navigation hover/focus dropdowns */
+  function initNavDropdowns() {
+    var dropdowns = Array.from(document.querySelectorAll('.nav-dropdown'));
+    dropdowns.forEach(function (item) {
+      var trigger = item.querySelector(':scope > a');
+      var panel = item.querySelector('.nav-submenu');
+      if (!trigger || !panel) return;
+      function setExpanded(open) {
+        item.classList.toggle('open', open);
+        trigger.setAttribute('aria-expanded', String(open));
+      }
+      item.addEventListener('mouseenter', function () { setExpanded(true); });
+      item.addEventListener('mouseleave', function () { if (!item.contains(document.activeElement)) setExpanded(false); });
+      item.addEventListener('focusin', function () { setExpanded(true); });
+      item.addEventListener('focusout', function () {
+        window.setTimeout(function () {
+          if (!item.contains(document.activeElement)) setExpanded(false);
+        }, 0);
+      });
+      trigger.addEventListener('keydown', function (event) {
+        if (event.key === 'ArrowDown' || event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          setExpanded(true);
+          var first = panel.querySelector('a');
+          if (first) first.focus();
+        }
+        if (event.key === 'Escape') setExpanded(false);
+      });
+      panel.addEventListener('keydown', function (event) {
+        var links = Array.from(panel.querySelectorAll('a'));
+        var index = links.indexOf(document.activeElement);
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          setExpanded(false);
+          trigger.focus();
+        } else if (event.key === 'ArrowDown') {
+          event.preventDefault();
+          links[(index + 1) % links.length].focus();
+        } else if (event.key === 'ArrowUp') {
+          event.preventDefault();
+          links[(index - 1 + links.length) % links.length].focus();
+        }
+      });
+    });
+  }
+
   /* Active nav link on scroll */
   document.addEventListener('scroll', function () {
     var sections = document.querySelectorAll('section[id]');
@@ -123,6 +169,7 @@
   function init() {
     initTheme();
     initResumeMenu();
+    initNavDropdowns();
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
   else init();
