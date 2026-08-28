@@ -24,6 +24,15 @@
 <!-- Scroll progress bar -->
 <div id="progressBar" role="progressbar" aria-hidden="true"></div>
 
+  <div class="graffiti-canvas" aria-hidden="true">
+    <span class="graffiti-word graffiti-word-a">SHIP · LEARN · REPEAT</span>
+    <span class="graffiti-word graffiti-word-b">&lt;code&gt; WITH SOUL</span>
+    <span class="graffiti-word graffiti-word-c">SOWETO → iHUB</span>
+    <span class="graffiti-word graffiti-word-d">MAKE IT USEFUL</span>
+    <span class="graffiti-mark graffiti-mark-a">//</span>
+    <span class="graffiti-mark graffiti-mark-b">{ }</span>
+  </div>
+
 <!-- ═══════════════════════════════
      NAV
 ════════════════════════════════ -->
@@ -76,22 +85,22 @@
 <section class="hero" id="home" aria-label="Hero section">
 
   <!-- The sequence moves from origin to the current iHub chapter. The final scene stops. -->
-      <div class="hero-layer img1 active" role="img" aria-label="Mahlatse Mokgawa, the beginning of the journey"
-    style="background-image:url('assets/headshot-bio.png');--hero-position:center 42%"></div>
+      <div class="hero-layer hero-portrait img1 active" role="img" aria-label="Mahlatse Mokgawa as a child in a green tracksuit and boots — the beginning of the journey"
+    style="background-image:url('assets/hero-01-childhood.png');--hero-position:center center"></div>
   <div class="hero-layer img2" role="img" aria-label="Streets of Soweto with cars, pedestrians and vendors"
     style="background-image:url('assets/hero-02-soweto.jpg');--hero-position:center 52%"></div>
-  <div class="hero-layer img3" role="img" aria-label="Mahlatse in a white bucket hat and white shirt"
-    style="background-image:url('assets/hero-03-casual-white-hat.jpg');--hero-position:center 38%"></div>
-  <div class="hero-layer img4" role="img" aria-label="Mahlatse in a white shirt during his professional FNB chapter"
-    style="background-image:url('assets/hero-04-fnb-selfie.jpg');--hero-position:center 32%"></div>
-  <div class="hero-layer img5" role="img" aria-label="Mahlatse holding a DSLR camera toward the lens"
-    style="background-image:url('assets/hero-05-dslr.jpg');--hero-position:center 44%"></div>
+  <div class="hero-layer hero-portrait img3" role="img" aria-label="Mahlatse in a white bucket hat and white shirt"
+    style="background-image:url('assets/hero-03-casual-white-hat.jpg');--hero-position:center center"></div>
+  <div class="hero-layer hero-portrait img4" role="img" aria-label="Mahlatse in a white shirt during his professional FNB chapter"
+    style="background-image:url('assets/hero-04-fnb-selfie.jpg');--hero-position:center center"></div>
+  <div class="hero-layer hero-portrait img5" role="img" aria-label="Mahlatse holding a DSLR camera toward the lens"
+    style="background-image:url('assets/hero-05-dslr.jpg');--hero-position:center center"></div>
   <div class="hero-layer img6" role="img" aria-label="Johannesburg traffic and urban movement in Braam"
     style="background-image:url('assets/hero-06-braam-traffic.jpg');--hero-position:center 52%"></div>
   <div class="hero-layer img7" role="img" aria-label="The iHub smiley-face building"
     style="background-image:url('assets/hero-07-ihub-building.jpg');--hero-position:center 50%"></div>
-  <div class="hero-layer img8" role="img" aria-label="An iHub workshop presentation with a participant in the foreground"
-    style="background-image:url('assets/hero-08-group-class.jpg');--hero-position:center 54%"></div>
+  <div class="hero-layer img8" role="img" aria-label="An iHub group workshop presentation with participants learning together"
+    style="background-image:url('assets/ihub-group-class-frame.jpg');--hero-position:center 54%"></div>
   <div class="hero-layer img9" role="img" aria-label="Inside the iHub classroom with tables and learning space"
     style="background-image:url('assets/hero-09-ihub-classroom.jpg');--hero-position:center 48%"></div>
   <div class="hero-layer img10" role="img" aria-label="The iHub smiley-face building, the current software chapter"
@@ -122,7 +131,7 @@
   </div>
 
   <div class="hero-dots" aria-label="Hero story scenes">
-    <button type="button" class="hero-dot active" data-idx="0" onclick="goToSlide(0)" aria-label="Show scene 1: Baby Me" aria-current="true"></button>
+    <button type="button" class="hero-dot active" data-idx="0" onclick="goToSlide(0)" aria-label="Show scene 1: Mahlatse in a green tracksuit and boots" aria-current="true"></button>
     <button type="button" class="hero-dot" data-idx="1" onclick="goToSlide(1)" aria-label="Show scene 2: Streets of Soweto"></button>
     <button type="button" class="hero-dot" data-idx="2" onclick="goToSlide(2)" aria-label="Show scene 3: Casual Me"></button>
     <button type="button" class="hero-dot" data-idx="3" onclick="goToSlide(3)" aria-label="Show scene 4: Formal Me at FNB"></button>
@@ -218,29 +227,29 @@
       <p class="creative-intro">Street frames, portraits and city light — shot with a Canon DSLR and an editorial eye for detail.</p>
       <div class="creative-photo-carousel" id="creativePhotoCarousel" role="region" aria-roledescription="carousel" aria-label="Photography portfolio">
         <div class="creative-photo-viewport">
-          <figure class="creative-photo-slide active">
+<figure class="creative-photo-slide active">
             <img src="assets/photography.jpg" alt="Canon DSLR ready for a photography session" loading="lazy"/>
             <figcaption>Tool of the trade · Canon DSLR</figcaption>
           </figure>
           <figure class="creative-photo-slide" hidden>
-            <img src="assets/street1.jpg" alt="Street photography in Johannesburg" loading="lazy"/>
+            <img src="assets/atleha-gallery-1.jpg" alt="Atleha collection detail photographed in Johannesburg" loading="lazy"/>
+            <figcaption>Atleha collection · visual texture</figcaption>
+          </figure>
+          <figure class="creative-photo-slide" hidden>
+            <img src="assets/tree01-gallery-2.png" alt="Black-and-white tree study from the photography collection" loading="lazy"/>
+            <figcaption>Quiet frame · black-and-white study</figcaption>
+          </figure>
+          <figure class="creative-photo-slide" hidden>
+            <img src="assets/@sharp_fede-39.jpg" alt="Collaborative portrait from the photography collection" loading="lazy"/>
+            <figcaption>People first · collaborative portrait</figcaption>
+          </figure>
+          <figure class="creative-photo-slide" hidden>
+            <img src="assets/redseason-2.jpeg" alt="Red Season cover art and visual direction" loading="lazy"/>
+            <figcaption>Red Season · art direction</figcaption>
+          </figure>
+          <figure class="creative-photo-slide" hidden>
+            <img src="assets/street1.jpg" alt="Johannesburg street photography from the collection" loading="lazy"/>
             <figcaption>Street language · Johannesburg</figcaption>
-          </figure>
-          <figure class="creative-photo-slide" hidden>
-            <img src="assets/night-street1.jpg" alt="Night street photography with city lights" loading="lazy"/>
-            <figcaption>After dark · urban light</figcaption>
-          </figure>
-          <figure class="creative-photo-slide" hidden>
-            <img src="assets/bantubahle.jpg" alt="Portrait photography from the portfolio" loading="lazy"/>
-            <figcaption>Portrait study · people first</figcaption>
-          </figure>
-          <figure class="creative-photo-slide" hidden>
-            <img src="assets/citynight-lights.jpg" alt="City lights photographed at night" loading="lazy"/>
-            <figcaption>City signals · finding the frame</figcaption>
-          </figure>
-          <figure class="creative-photo-slide" hidden>
-            <img src="assets/dawn.jpg" alt="Dawn landscape photography" loading="lazy"/>
-            <figcaption>First light · patient observation</figcaption>
           </figure>
         </div>
         <div class="creative-photo-controls">
@@ -263,13 +272,22 @@
         <span class="creative-icon" aria-hidden="true">▣</span>
         <div><span class="creative-eyebrow">02 / motion practice</span><h3 class="creative-title">Video</h3></div>
       </div>
-      <p class="creative-intro">A future-ready shelf for documentary snippets, iHub field notes and creative edits as the archive grows.</p>
-      <div class="video-slots" aria-label="Video portfolio slots">
-        <div class="video-slot"><span class="slot-index">01</span><span><strong>Day in the Life</strong><small>Coming soon · observational edit</small></span><span class="slot-mark">+</span></div>
-        <div class="video-slot"><span class="slot-index">02</span><span><strong>iHub Journey</strong><small>Coming soon · learning in public</small></span><span class="slot-mark">+</span></div>
-        <div class="video-slot"><span class="slot-index">03</span><span><strong>Creative Edits</strong><small>Coming soon · rhythm meets interface</small></span><span class="slot-mark">+</span></div>
+      <p class="creative-intro">Two supplied masterclass field recordings: street soccer energy and a technical conversation about large language models. No autoplay — press play when the story earns your attention.</p>
+      <div class="video-slots video-slots-real" aria-label="Video portfolio">
+        <figure class="video-slot video-slot-media">
+          <video controls preload="metadata" poster="assets/ihub-group-class-frame.jpg" aria-label="Street soccer skills session">
+            <source src="assets/video-gallery-3.mp4" type="video/mp4"/>
+          </video>
+          <figcaption><span class="slot-index">01</span><span><strong>Street Soccer Masterclass</strong><small>Footwork, teamwork and rhythm in the city.</small></span></figcaption>
+        </figure>
+        <figure class="video-slot video-slot-media">
+          <video controls preload="metadata" poster="assets/ihub-classroom-hero-3.png" aria-label="Technical masterclass discussion about large language models">
+            <source src="assets/20260423_130142.mp4" type="video/mp4"/>
+          </video>
+          <figcaption><span class="slot-index">02</span><span><strong>LLM Masterclass Discussion</strong><small>Technical ideas shared in a relaxed iHub workshop setting.</small></span></figcaption>
+        </figure>
       </div>
-      <p class="creative-note">The slot stays intentional: no autoplay, no placeholder stock footage.</p>
+      <p class="creative-note">The archive gives the site real motion and real learning-in-public energy. Labels stay precise: no invented interview metadata, no stock footage, just the work as it happened.</p>
     </article>
 
     <article class="creative-card creative-card-music reveal reveal-d3">
@@ -279,10 +297,15 @@
       </div>
       <p class="creative-intro">South African vernac, lived experience and beat-led storytelling — another way I think in rhythm.</p>
       <div class="music-player">
-        <img class="music-cover" src="assets/red-season-cover-art.jpeg" alt="Red Season cover art" loading="lazy"/>
-        <div class="music-info"><strong>Don't Worry About IT</strong><small>Gustavo x Kaymo · supplied demo</small></div>
-        <audio id="musicTrack" controls preload="none" src="assets/gustavo-x-kaymo-dont-worry-about-it.mp3" aria-label="Don't Worry About IT by Gustavo x Kaymo"></audio>
+        <img class="music-cover" src="assets/redseason-2.jpeg" alt="Red Season cover art" loading="lazy"/>
+        <div class="music-info"><strong id="musicTitle">DWA Khalangan Filimi</strong><small id="musicArtist">Supplied medley · user-controlled</small></div>
+        <audio id="musicTrack" controls preload="none" src="assets/dwa-khalangan-filimi.mp3" aria-label="DWA Khalangan Filimi"></audio>
         <button type="button" id="musicSkip" class="music-skip" aria-label="Skip forward 10 seconds">+10s</button>
+      </div>
+      <div class="music-playlist" role="list" aria-label="Choose a supplied track">
+        <button type="button" class="music-track active" role="listitem" data-src="assets/dwa-khalangan-filimi.mp3" data-title="DWA Khalangan Filimi" data-artist="Supplied medley">Filimi <span>01</span></button>
+        <button type="button" class="music-track" role="listitem" data-src="assets/gustavo-x-kaymo-khala-ngan.mp3" data-title="Khala Ngan" data-artist="Gustavo x Kaymo">Khala Ngan <span>02</span></button>
+        <button type="button" class="music-track" role="listitem" data-src="assets/gustavo-x-kaymo-dont-worry-about-it.mp3" data-title="Don't Worry About IT" data-artist="Gustavo x Kaymo">Don't Worry <span>03</span></button>
       </div>
       <ul class="creative-list" aria-label="Music disciplines"><li>Hip Hop — SA Vernac</li><li>FL Studio Production</li><li>Songwriting</li></ul>
     </article>
@@ -386,7 +409,7 @@
           <div class="project-meta-row"><span class="project-number">01</span><span class="project-status">Live build</span></div>
           <h3 class="project-title">PawFinder</h3>
           <p class="project-desc">A dog discovery experience designed around clear filtering, responsive cards, shared state and an approachable path from search to details.</p>
-          <div class="project-tech" aria-label="PawFinder technologies used"><span>React</span><span>JavaScript</span><span>Context API</span><span>CSS</span></div>
+          <div class="project-tech" aria-label="PawFinder technologies used"><span title="React">⚛ React</span><span title="JavaScript">JS</span><span title="Context API">{ } Context</span><span title="CSS"># CSS</span></div>
           <div class="project-actions">
             <a href="case-studies/pawfinder.html" class="case-study-btn">Case Study <span aria-hidden="true">→</span></a>
             <a href="https://react-dog-search-app.vercel.app" target="_blank" rel="noopener noreferrer">Live Link <span aria-hidden="true">↗</span></a>
@@ -404,7 +427,7 @@
           <div class="project-meta-row"><span class="project-number">02</span><span class="project-status">React build</span></div>
           <h3 class="project-title">Google Keep Clone</h3>
           <p class="project-desc">A notes workspace built to understand component structure, local persistence, pinning, colour coding and the ergonomics of everyday tools.</p>
-          <div class="project-tech" aria-label="Google Keep Clone technologies used"><span>React</span><span>JavaScript</span><span>Local Storage</span><span>CSS</span></div>
+          <div class="project-tech" aria-label="Google Keep Clone technologies used"><span title="React">⚛ React</span><span title="JavaScript">JS</span><span title="Local Storage">▣ Storage</span><span title="CSS"># CSS</span></div>
           <div class="project-actions">
             <a href="case-studies/google-keep.html" class="case-study-btn">Case Study <span aria-hidden="true">→</span></a>
             <span class="project-link-disabled" aria-disabled="true" title="No verified live deployment is configured yet">Live link pending</span>
@@ -422,7 +445,7 @@
           <div class="project-meta-row"><span class="project-number">03</span><span class="project-status">Live build</span></div>
           <h3 class="project-title">VectorDrive</h3>
           <p class="project-desc">A modern automotive interface that turns brand discovery into a clear, image-led browsing experience with room to scale into deeper vehicle exploration.</p>
-          <div class="project-tech" aria-label="VectorDrive technologies used"><span>React</span><span>Vite</span><span>JavaScript</span><span>CSS</span></div>
+          <div class="project-tech" aria-label="VectorDrive technologies used"><span title="React">⚛ React</span><span title="Vite">Vite</span><span title="JavaScript">JS</span><span title="CSS"># CSS</span></div>
           <div class="project-actions">
             <a href="case-studies/vectordrive.html" class="case-study-btn">Case Study <span aria-hidden="true">→</span></a>
             <a href="https://vectordrive.vercel.app" target="_blank" rel="noopener noreferrer">Live Link <span aria-hidden="true">↗</span></a>

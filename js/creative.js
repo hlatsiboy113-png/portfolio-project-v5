@@ -21,6 +21,7 @@
         var active = i === current;
         dot.classList.toggle('active', active);
         dot.setAttribute('aria-selected', String(active));
+        dot.tabIndex = active ? 0 : -1;
       });
     }
 
@@ -29,8 +30,16 @@
     dots.forEach(function (dot, i) {
       dot.addEventListener('click', function () { showPhoto(i); });
       dot.addEventListener('keydown', function (event) {
-        if (event.key === 'ArrowLeft') { event.preventDefault(); showPhoto(i - 1); dots[(i - 1 + dots.length) % dots.length].focus(); }
-        if (event.key === 'ArrowRight') { event.preventDefault(); showPhoto(i + 1); dots[(i + 1) % dots.length].focus(); }
+        if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          showPhoto(i - 1);
+          dots[(i - 1 + dots.length) % dots.length].focus();
+        }
+        if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          showPhoto(i + 1);
+          dots[(i + 1) % dots.length].focus();
+        }
       });
     });
     showPhoto(0);
@@ -38,6 +47,47 @@
 
   var track = document.getElementById('musicTrack');
   var skip = document.getElementById('musicSkip');
+  var musicTitle = document.getElementById('musicTitle');
+  var musicArtist = document.getElementById('musicArtist');
+  var musicTracks = Array.from(document.querySelectorAll('.music-track'));
+
+  function setTrack(button, shouldPlay) {
+    if (!track || !button) return;
+    var wasPlaying = shouldPlay || !track.paused;
+    track.src = button.getAttribute('data-src') || '';
+    if (musicTitle) musicTitle.textContent = button.getAttribute('data-title') || 'Selected track';
+    if (musicArtist) musicArtist.textContent = button.getAttribute('data-artist') || 'Supplied archive';
+    musicTracks.forEach(function (item) {
+      var active = item === button;
+      item.classList.toggle('active', active);
+      item.setAttribute('aria-current', active ? 'true' : 'false');
+    });
+    track.load();
+    if (wasPlaying) {
+      var promise = track.play();
+      if (promise && typeof promise.catch === 'function') promise.catch(function () {});
+    }
+  }
+
+  musicTracks.forEach(function (button) {
+    button.addEventListener('click', function () { setTrack(button, false); });
+    button.addEventListener('keydown', function (event) {
+      var index = musicTracks.indexOf(button);
+      if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+        event.preventDefault();
+        var previousButton = musicTracks[(index - 1 + musicTracks.length) % musicTracks.length];
+        previousButton.focus();
+        setTrack(previousButton, false);
+      }
+      if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+        event.preventDefault();
+        var nextButton = musicTracks[(index + 1) % musicTracks.length];
+        nextButton.focus();
+        setTrack(nextButton, false);
+      }
+    });
+  });
+
   if (track && skip) {
     skip.addEventListener('click', function () {
       track.currentTime = Math.min((track.duration || track.currentTime + 10), track.currentTime + 10);

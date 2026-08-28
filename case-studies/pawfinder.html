@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="PawFinder case study by Mahlatse Mokgawa: a responsive React dog discovery experience."/>
   <title>PawFinder Case Study | Mahlatse</title>
   <link rel="stylesheet" href="../css/style.css"/>
 </head>
@@ -12,12 +13,17 @@
     <p class="section-label">Case Study / 01</p>
     <h1>PawFinder</h1>
     <p class="case-study-lede">Designing a calmer path from dog discovery to meaningful next steps.</p>
+    <div class="case-study-meta" aria-label="PawFinder project snapshot"><span>React</span><span>Context API</span><span>Responsive UI</span><span>Live build</span></div>
     <div class="case-study-hero"><img src="../assets/Pawfinder-home.png" alt="PawFinder dog discovery interface"/></div>
+    <div class="case-study-gallery" aria-label="PawFinder supporting screenshots">
+      <figure><img src="../assets/pawfinder.png" alt="PawFinder supporting project screen from the supplied archive"/><figcaption>Supporting view · discovery and detail states</figcaption></figure>
+      <figure><img src="../assets/Pawfinder-home.png" alt="PawFinder responsive home screen"/><figcaption>Primary view · search-first browsing rhythm</figcaption></figure>
+    </div>
     <div class="case-study-grid">
-      <section><p class="section-label">The Brief</p><h2>Make discovery feel clear.</h2><p>PawFinder is a responsive dog discovery platform built around approachable browsing, useful filtering and a clear route into breed detail. The goal was to make a content-heavy experience feel friendly instead of overwhelming.</p></section>
-      <section><p class="section-label">My Approach</p><h2>Structure before decoration.</h2><p>I focused on reusable React components, shared state and progressive disclosure. Search and filtering stay close to the user’s intent, while responsive cards preserve the same hierarchy across screen sizes.</p></section>
-      <section><p class="section-label">What I Learned</p><h2>State is part of the interface.</h2><p>The most important decisions were not visual tricks. They were the rules that kept filters, favourites and details in sync. Good frontend work makes those rules feel invisible.</p></section>
-      <section><p class="section-label">Outcome</p><h2>A useful, deployable build.</h2><p>The result is a live React application with a focused discovery flow, responsive behaviour and a codebase that can grow into a deeper adoption experience.</p><p class="case-links"><a href="https://react-dog-search-app.vercel.app" target="_blank" rel="noopener noreferrer">Live Link ↗</a><a href="https://github.com/hlatsiboy113-png/react-dog-search-app" target="_blank" rel="noopener noreferrer">GitHub ↗</a></p></section>
+      <section><p class="section-label">The Brief</p><h2>Make discovery feel clear.</h2><p>PawFinder is a responsive dog discovery platform built around approachable browsing, useful filtering and a clear route into breed detail. The challenge was to keep the experience warm while giving a visitor enough structure to move from a broad search to a confident next step.</p><p>I treated the interface as a small product system rather than a collection of cards: content hierarchy, filter behaviour, empty states and detail transitions all needed to agree.</p></section>
+      <section><p class="section-label">My Approach</p><h2>Structure before decoration.</h2><p>I focused on reusable React components, shared state and progressive disclosure. Search and filtering stay close to the user’s intent, while responsive cards preserve the same hierarchy across screen sizes.</p><p>The work also meant designing the connective tissue: predictable loading, readable states and actions that remain discoverable when the layout collapses on smaller screens.</p></section>
+      <section><p class="section-label">What I Learned</p><h2>State is part of the interface.</h2><p>The most important decisions were not visual tricks. They were the rules that kept filters, favourites and details in sync. Good frontend work makes those rules feel invisible.</p><p>This build sharpened my understanding of how a small context layer can reduce prop friction while still keeping the user’s mental model simple.</p></section>
+      <section><p class="section-label">Outcome</p><h2>A useful, deployable build.</h2><p>The result is a live React application with a focused discovery flow, responsive behaviour and a codebase that can grow into a deeper adoption experience. The screenshots show the visual surface; the repository shows the component and state decisions underneath it.</p><p class="case-links"><a href="https://react-dog-search-app.vercel.app" target="_blank" rel="noopener noreferrer">Live Link ↗</a><a href="https://github.com/hlatsiboy113-png/react-dog-search-app" target="_blank" rel="noopener noreferrer">GitHub ↗</a></p></section>
     </div>
   </main>
 </body>

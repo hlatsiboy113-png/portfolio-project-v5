@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Google Keep Clone case study by Mahlatse Mokgawa: a React study in dependable note-taking interactions."/>
   <title>Google Keep Clone Case Study | Mahlatse</title>
   <link rel="stylesheet" href="../css/style.css"/>
 </head>
@@ -12,12 +13,17 @@
     <p class="section-label">Case Study / 02</p>
     <h1>Google Keep Clone</h1>
     <p class="case-study-lede">Rebuilding an everyday tool to learn how small interactions create trust.</p>
-    <div class="case-study-hero keep-study-hero"><div class="keep-preview" aria-hidden="true"><span></span><span></span><span></span></div></div>
+    <div class="case-study-meta" aria-label="Google Keep project snapshot"><span>React</span><span>Local Storage</span><span>Notes UX</span><span>Repository available</span></div>
+    <div class="case-study-hero keep-study-hero"><div class="keep-preview" aria-label="Illustrated Google Keep note board"><span></span><span></span><span></span></div></div>
+    <div class="case-study-gallery" aria-label="Google Keep supporting interface views">
+      <figure><div class="keep-preview case-study-preview-large" aria-hidden="true"><span></span><span></span><span></span></div><figcaption>Note board · colour, hierarchy and scanning</figcaption></figure>
+      <figure><div class="keep-preview case-study-preview-large keep-preview-alt" aria-hidden="true"><span></span><span></span><span></span></div><figcaption>Interaction study · pin, edit and archive affordances</figcaption></figure>
+    </div>
     <div class="case-study-grid">
-      <section><p class="section-label">The Brief</p><h2>Understand the ordinary.</h2><p>The project recreates the core experience of a notes tool: capture an idea quickly, organise it lightly and return to it later without friction.</p></section>
-      <section><p class="section-label">My Approach</p><h2>Make state legible.</h2><p>I worked through note creation, editing, pinning, archiving, colour coding and grid/list views with React components and local storage persistence.</p></section>
-      <section><p class="section-label">What I Learned</p><h2>Feedback needs rhythm.</h2><p>Tiny cues — saved state, clear empty states and predictable controls — have an outsized effect on whether an interface feels dependable.</p></section>
-      <section><p class="section-label">Outcome</p><h2>A focused React study.</h2><p>The clone is a real repository and a foundation for further refinement. A verified live deployment has not been configured yet, so the portfolio labels that status honestly.</p><p class="case-links"><a href="https://github.com/hlatsiboy113-png/react-google-keep" target="_blank" rel="noopener noreferrer">GitHub ↗</a></p></section>
+      <section><p class="section-label">The Brief</p><h2>Understand the ordinary.</h2><p>The project recreates the core experience of a notes tool: capture an idea quickly, organise it lightly and return to it later without friction. Everyday products are demanding because their value depends on trust, speed and small moments of feedback.</p><p>I used the familiar note-board model as a constraint: the interface should be quiet enough to disappear, but expressive enough to help a person remember what matters.</p></section>
+      <section><p class="section-label">My Approach</p><h2>Make state legible.</h2><p>I worked through note creation, editing, pinning, archiving, colour coding and grid/list views with React components and local storage persistence.</p><p>The key implementation question was not only how to create a note, but how each action should remain reversible, visible and predictable after a refresh.</p></section>
+      <section><p class="section-label">What I Learned</p><h2>Feedback needs rhythm.</h2><p>Tiny cues — saved state, clear empty states and predictable controls — have an outsized effect on whether an interface feels dependable.</p><p>This project made the invisible work visible: data shape, component boundaries and the order in which state updates reach the screen all affect the feeling of quality.</p></section>
+      <section><p class="section-label">Outcome</p><h2>A focused React study.</h2><p>The clone is a real repository and a foundation for further refinement. A verified live deployment has not been configured yet, so the portfolio labels that status honestly. The case study keeps the emphasis on what was learned and what can be improved next.</p><p class="case-links"><a href="https://github.com/hlatsiboy113-png/react-google-keep" target="_blank" rel="noopener noreferrer">GitHub ↗</a></p></section>
     </div>
   </main>
 </body>
